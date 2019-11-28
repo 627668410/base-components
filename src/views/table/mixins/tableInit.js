@@ -2,29 +2,13 @@ import { getTableList } from '@/api/components'
 export default {
   data() {
     return {
-      buttonData: [{
-        name: 'add',
-        label: '添加'
-      }, {
-        name: 'delete',
-        label: '删除',
-        disabled: true
-      }],
       columns: [{
-        prop: 'roleName',
-        label: '角色名称'
+        prop: 'name',
+        label: '名称'
       },
       {
-        prop: 'account',
-        label: '账户名'
-      },
-      {
-        prop: 'createAccount',
-        label: '创建者'
-      },
-      {
-        prop: 'createTime',
-        label: '创建时间'
+        prop: 'value',
+        label: 'value'
       },
       {
         label: '禁用',
@@ -62,12 +46,9 @@ export default {
     // 表格分页请求
     async _setTableData({ currentPage = 1, pageSize = 10 }) {
       this.options.loading = true
-      const [err, res] = await this.$to(getTableList({ currentPage, pageSize }))
-      if (err) {
-        this.options.loading = false
-        return
-      }
+      const [err, res] = await getTableList({ currentPage, pageSize })
       this.options.loading = false
+      if (err) return
       this.setPageParams(res)
     },
     // 页码发生变化
@@ -78,6 +59,9 @@ export default {
     onEditClick(row) {
       this.rowData = row
       console.log(row)
+    },
+    onChange(id, val) {
+      this.$message.success('我变了')
     },
     init() {
       // 表格数据初始化
