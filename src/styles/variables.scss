@@ -1,0 +1,19 @@
+$sideBarWidth: 210px;
+$navBarHeight: 50px;
+// menu
+$LogoBg: #2666af;
+$menuText:#efefef;
+$menuActiveText:#efefef;
+$subMenuActiveText: #f4f4f5;
+$menuBg:#204a89;
+$subMenuBg:#2666af;
+$menuHover:#001528;
+$subMenuHover: #758CE1;
+
+:export {
+  sideBarWidth: $sideBarWidth;
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+  menuBg: $menuBg;
+  subMenuBg: $subMenuBg;
+}
