@@ -10,7 +10,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-#app{
-  height: 100%;
+@import "~@/styles/variables.scss";
+#app {
+  height: calc(100% - #{$navBarHeight});
 }
 </style>

@@ -11,10 +11,10 @@ export default {
   },
   methods: {
     setPageParams(res) {
-      this.tableData = res.data.list
-      this.params.currentPage = res.data.currentPage
-      this.params.pageSize = res.data.pageSize
-      this.params.total = res.data.totalSize
+      this.tableData = res.list
+      this.params.currentPage = res.currentPage
+      this.params.pageSize = res.pageSize
+      this.params.total = res.totalSize
     }
   }
 }

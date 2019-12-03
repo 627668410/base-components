@@ -25,7 +25,9 @@
     .horizontal-collapse-transition {
       transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
     }
-
+    .el-scrollbar{
+      height: calc(100% - 40px);
+    }
     .scrollbar-wrapper {
       overflow-x: hidden !important;
 
@@ -172,3 +174,15 @@
     }
   }
 }
+
+ .el-scrollbar {
+   height: calc(100% - 40px);
+ }
+
+ .scrollbar-wrapper {
+   overflow-x: hidden !important;
+
+   .el-scrollbar__view {
+     height: 100%;
+   }
+ }

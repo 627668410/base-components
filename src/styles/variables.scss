@@ -10,10 +10,17 @@ $subMenuBg:#2666af;
 $menuHover:#001528;
 $subMenuHover: #758CE1;
 
+$upColor: red; // 增长的数据
+$downColor: green; // 减少的数据
+$gray: #ccc; // 没有变化的数据
+
 :export {
   sideBarWidth: $sideBarWidth;
   menuText: $menuText;
   menuActiveText: $menuActiveText;
   menuBg: $menuBg;
+  upColor: $upColor;
+  downColor: $downColor;
+  gray: $gray;
   subMenuBg: $subMenuBg;
 }

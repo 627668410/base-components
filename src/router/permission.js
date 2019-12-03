@@ -22,6 +22,7 @@ router.beforeEach(async (to, from, next) => {
       store.dispatch('permission/async_generate_routes', store.getters.user.menuRights).then(() => next(to.path))
     }
   } else {
+    console.error('未获取到用户信息')
     // 未登录
     if (to.path === '/login') {
       next()

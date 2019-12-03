@@ -94,7 +94,6 @@ export default {
           this.async_login(this.loginForm)
             .then((routes) => {
               let route = routes[0].children[0].name
-              console.log(route)
               this.$router.push({ name: route })
             })
             .catch(() => {

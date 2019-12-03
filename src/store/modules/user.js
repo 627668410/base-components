@@ -31,9 +31,9 @@ const actions = {
         return false
       }
       // 根据权限获取路由挂载
-      this.dispatch('permission/async_generate_routes', res.data.menuRights)
+      this.dispatch('permission/async_generate_routes', res.menuRights)
         .then((routes) => {
-          commit('SET_USER', res.data)
+          commit('SET_USER', res)
           commit('SET_LOGIN', true)
           resolve(routes)
         })

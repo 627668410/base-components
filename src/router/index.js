@@ -1,14 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Components from './modules/components'
+import Echarts from './modules/echarts'
 
 Vue.use(Router)
 
 const Layout = () => import(/* webpackChunkname: 'Layout' */ '@/layout')
 const Login = () => import(/* webpackChunkname: 'Login' */ '@/views/login')
 const Page404 = () => import(/* webpackChunkname: 'Page404' */ '@/views/error-page/404')
-const Table = () => import(/* webpackChunkname: 'Table' */ '@/views/table')
-const Form = () => import(/* webpackChunkname: 'Form' */ '@/views/form')
-const EchartMap = () => import(/* webpackChunkname: 'EchartMap' */ '@/views/echart-map')
 
 export const constantRoutes = [{
   path: '/',
@@ -31,23 +30,9 @@ export const asyncRoutes = [{
     title: '组件',
     icon: 'parking'
   },
-  children: [{
-    path: '/components/table',
-    name: 'table',
-    component: Table,
-    meta: {
-      title: '表格',
-      icon: 'parking'
-    }
-  }, {
-    path: '/components/form',
-    name: 'form',
-    component: Form,
-    meta: {
-      title: '表单',
-      icon: 'parking'
-    }
-  }]
+  children: [
+    ...Components
+  ]
 }, {
   path: '/echarts',
   name: 'echarts',
@@ -56,14 +41,9 @@ export const asyncRoutes = [{
     title: '图表',
     icon: 'record'
   },
-  children: [{
-    path: '/echarts/map',
-    name: 'echart_map',
-    component: EchartMap,
-    meta: {
-      title: '地图'
-    }
-  }]
+  children: [
+    ...Echarts
+  ]
 }]
 const createRouter = () => new Router({
   scrollBehavior: () => ({

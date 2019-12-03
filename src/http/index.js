@@ -84,7 +84,7 @@ http.interceptors.response.use((response) => {
   let { status } = response
   let { msg } = response.data
   if (status.toString().startsWith('2')) {
-    return response.data
+    return response.data.data
   }
 
   if (status === 400) {

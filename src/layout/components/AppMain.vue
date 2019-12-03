@@ -25,5 +25,6 @@ export default {
 @import '@/styles/variables.scss';
 .layout {
   margin-top: $navBarHeight;
+  height: 100%;
 }
 </style>
