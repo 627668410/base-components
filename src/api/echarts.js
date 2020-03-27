@@ -11,3 +11,7 @@ export const getStackData = () => http({
 export const getBarData = () => http({
   url: '/echarts/bar'
 })
+
+export const getMapData = () => http({
+  url: '/echarts/map'
+})
